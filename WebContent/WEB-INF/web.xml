@@ -13,12 +13,12 @@
 
 	<servlet>
 
-		<servlet-name>CallWebService</servlet-name>
+		<servlet-name>CallWeb</servlet-name>
 		<servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>CallWebService</servlet-name>
+		<servlet-name>CallWeb</servlet-name>
 		<url-pattern>/CallWebService</url-pattern>
 	</servlet-mapping>
 </web-app>
