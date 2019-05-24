@@ -1,0 +1,25 @@
+package com.app;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ReleaseInformationApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ReleaseInformationApplication.class, args);
+		
+		String files="my-file.war";
+		String[] split = files.split(".war");
+		System.out.println(" :::::: "+split[0]);
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

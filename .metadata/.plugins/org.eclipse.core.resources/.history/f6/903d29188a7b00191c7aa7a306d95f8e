@@ -1,0 +1,40 @@
+package com.example.service;
+
+import java.util.HashMap;
+import org.springframework.stereotype.Service;
+import com.example.model.Order;
+
+@Service
+public class PersonService {
+	HashMap<String, Order> personObj = new HashMap<String, Order>();
+
+	public PersonService() {
+		Order pObj = new Order();
+		
+		pObj.setpId("102");
+		pObj.setpName("Recuve");
+		pObj.setpAddress("Hyderabad");
+		pObj.setpAge(26);
+		personObj.put("2", pObj);
+		
+		pObj.setpId("101");
+		pObj.setpName("Narasimha");
+		pObj.setpAddress("Hyderabad");
+		pObj.setpAge(26);
+		personObj.put("1", pObj);
+	}
+
+	public Order getPerson(String pId) {
+		System.out.println("PersonService :: "+pId + " :: "+personObj.containsKey(pId));
+		if (personObj.containsKey(pId)) {
+			return personObj.get(pId);
+		} 
+		else {
+			return null;
+		}
+	}
+
+	public HashMap<String, Order> getAllPersons() {
+		return personObj;
+	}
+}

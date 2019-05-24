@@ -1,0 +1,23 @@
+package com.app.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.app.model.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao{
+
+	@Override
+	public List<Employee> getAllEmployee(Employee emp) {
+		
+		List<Employee> empList=new ArrayList<Employee>();
+		
+		Employee emp1=new Employee(532,"Narasimha","Hyd");
+		Employee emp2=new Employee(532,"Narasimha","Hyd");
+		Employee emp3=new Employee(532,"Narasimha","Hyd");
+		
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

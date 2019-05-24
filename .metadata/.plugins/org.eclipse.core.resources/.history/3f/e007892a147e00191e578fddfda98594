@@ -1,0 +1,9 @@
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class SpringGitInfo {
+
+    @Test
+    public void contextLoads() {
+    }
+
+}

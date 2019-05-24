@@ -1,0 +1,31 @@
+package com.app;
+
+
+import java.io.File;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ReleaseInformationApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ReleaseInformationApplication.class, args);
+		
+		File aDrive = new File("C:");
+		long freeSpace = aDrive.getFreeSpace();
+		long totalSpace = aDrive.getTotalSpace();
+		
+		System.out.println(totalSpace-freeSpace);
+		
+		Runtime runTime=Runtime.getRuntime();
+		long maxMemory = runTime.maxMemory();
+		System.out.println(runTime.totalMemory());
+		System.out.println(runTime.freeMemory());
+		System.out.println(runTime.totalMemory()-runTime.freeMemory());
+		
+		
+		
+	}
+
+}

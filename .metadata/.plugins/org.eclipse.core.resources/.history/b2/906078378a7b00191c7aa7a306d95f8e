@@ -1,0 +1,86 @@
+package com.example.model;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class OrderItem {
+	private String pId;
+	private String pName;
+	private String pAddress;
+	private Integer pAge;
+	
+	public String getpId() {
+		return pId;
+	}
+	public void setpId(String pId) {
+		this.pId = pId;
+	}
+	public String getpName() {
+		return pName;
+	}
+	public void setpName(String pName) {
+		this.pName = pName;
+	}
+	public String getpAddress() {
+		return pAddress;
+	}
+	public void setpAddress(String pAddress) {
+		this.pAddress = pAddress;
+	}
+	public Integer getpAge() {
+		return pAge;
+	}
+	public void setpAge(Integer pAge) {
+		this.pAge = pAge;
+	}
+	@Override
+	public String toString() {
+		return "Person [pId=" + pId + ", pName=" + pName + ", pAddress=" + pAddress + ", pAge=" + pAge + "]";
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((pAddress == null) ? 0 : pAddress.hashCode());
+		result = prime * result + ((pAge == null) ? 0 : pAge.hashCode());
+		result = prime * result + ((pId == null) ? 0 : pId.hashCode());
+		result = prime * result + ((pName == null) ? 0 : pName.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		OrderItem other = (OrderItem) obj;
+		if (pAddress == null) {
+			if (other.pAddress != null)
+				return false;
+		} else if (!pAddress.equals(other.pAddress))
+			return false;
+		if (pAge == null) {
+			if (other.pAge != null)
+				return false;
+		} else if (!pAge.equals(other.pAge))
+			return false;
+		if (pId == null) {
+			if (other.pId != null)
+				return false;
+		} else if (!pId.equals(other.pId))
+			return false;
+		if (pName == null) {
+			if (other.pName != null)
+				return false;
+		} else if (!pName.equals(other.pName))
+			return false;
+		return true;
+	}
+	
+	
+	
+	
+
+}

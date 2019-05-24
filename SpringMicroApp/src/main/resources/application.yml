@@ -1,0 +1,11 @@
+eureka: 
+ client:
+  registerwithEureka: true
+  fetchRegistry: true
+  serviceUrl:
+    defaultZone: http://localhost:8030/eureka/
+  instance: 
+   hostname: localhost
+spring: 
+ application: 
+  name: Customer-Details

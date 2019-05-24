@@ -1,0 +1,36 @@
+package com.app;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ReleaseInformationApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ReleaseInformationApplication.class, args);
+		
+		String files="my-file.war";
+		String[] split = files.split(".war");
+		System.out.println(" :::::: "+split[0]);
+		List<String> listFile = null;
+		File directory = new File("");
+		File[] filesInfo = directory.listFiles();
+		if (filesInfo.length < 0) {
+			listFile = new ArrayList<String>();
+			for (File file : filesInfo) {
+				listFile.add(file.getName());
+			}
+		}
+		
+		
+		
+		
+		
+		
+	}
+
+}

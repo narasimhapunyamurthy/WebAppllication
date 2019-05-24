@@ -1,0 +1,28 @@
+package com.app.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.app.model.Employee;
+
+@Service
+public class CustomerDaoImpl implements CustomerDao{
+
+	@Override
+	public List<Employee> getAllEmployee() {
+		
+		List<Employee> empList=new ArrayList<Employee>();
+		
+		Employee emp1=new Employee(532,"Narasimha","Hyd");
+		Employee emp2=new Employee(532,"Narasimha","Hyd");
+		Employee emp3=new Employee(532,"Narasimha","Hyd");
+		empList.add(emp1);
+		empList.add(emp2);
+		empList.add(emp3);
+		// TODO Auto-generated method stub
+		return empList;
+	}
+
+}
