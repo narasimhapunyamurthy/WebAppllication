@@ -7,17 +7,16 @@ import java.io.InputStreamReader;
 import java.lang.management.ManagementFactory;
 import java.util.Enumeration;
 import java.util.HashMap;
-import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.springframework.data.repository.Repository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 import org.xml.sax.SAXException;
 
@@ -32,6 +31,14 @@ public class ReleaseInfoController {
 
 	@RequestMapping(value = "/Info",method = RequestMethod.GET)
 	public HashMap<String,String> getReleaseInformation() throws IOException, ParserConfigurationException, SAXException{
+		
+		
+		RestTemplate restTemplate = new RestTemplate();
+        Object obj = restTemplate.getForObject("http://localhost:8989/actuator/info",Object.class);
+        System.out.println("obj.toString() ::: "+obj.toString());
+		
+        
+        
 		Runtime runTime=Runtime.getRuntime();
 		long maxMemory = runTime.maxMemory();
 		System.out.println(runTime.totalMemory());
@@ -65,7 +72,7 @@ public class ReleaseInfoController {
 		                             new InputStreamReader(zipFile.getInputStream(entry)));
 		                         String line;
 		                         while ((line = br.readLine()) != null) {
-		                           System.out.println("line :: "+line);
+		                           System.out.println();
 		                         }
 		                	
 		                	
@@ -82,6 +89,7 @@ public class ReleaseInfoController {
 		mapWar.put("TotalMemory", String.valueOf(formatSize(runTime.totalMemory())));
 		mapWar.put("UsageMemory", String.valueOf(formatSize(runTime.totalMemory()-runTime.freeMemory())));
 		mapWar.put("CPUCurentUsage", String.valueOf(String.valueOf(bean.getProcessCpuLoad())));
+		mapWar.put("GitInfo",obj.toString());
 
 		
 		/*
